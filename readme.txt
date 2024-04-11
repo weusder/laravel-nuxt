@@ -1,3 +1,9 @@
+
+
+git clone https://github.com/weusder/laravel-nuxt.git
+
+cd laravel-nuxt
+
 # Subir containers
 docker compose up -d
 
