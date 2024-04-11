@@ -8,7 +8,7 @@ cd laravel-nuxt
 docker compose up -d
 
 # Cria arquivo .env
-docker compose exec laravel_api cp .env-example .env
+docker compose exec laravel_api cp .env.example .env
 
 # Instalar dependencias api
 docker compose exec laravel_api composer install
