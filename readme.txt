@@ -43,5 +43,15 @@ https://www.youtube.com/watch?v=HLPoKz9j9KY&t=325s
 https://www.youtube.com/watch?v=ScmgXebitlQ&list=PLN_FLtIvNW0mo63rPdFBgL_UP5wF5eWLT
 
 
+# Atualizar 
+
+git pull
+
+cd laravel-nuxt
+
+# Subir containers e atualizar as imagens
+docker compose up -d --build
+
+
 
 

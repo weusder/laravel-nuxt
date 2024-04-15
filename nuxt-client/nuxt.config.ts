@@ -2,6 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  ssr: false,
+  router: {
+    options: {
+      hashMode: true,
+    },
+  },
+
   components: [
     {
       path: "~/components", // will get any components nested in let's say /components/test too
@@ -9,5 +16,5 @@ export default defineNuxtConfig({
     },
   ],
 
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"]
-})
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss"],
+});

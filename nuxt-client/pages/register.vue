@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+definePageMeta({
+  middleware: ["guest"],
+});
+
 const form = ref({
   name: "",
   email: "",
@@ -18,39 +22,62 @@ async function handleRegister() {
 </script>
 
 <template>
-  <div>
-    <h1>Register</h1>
+  <form @submit.prevent="handleRegister">
+    <div class="mb-6">
+      <label
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >
+        Nome
+      </label>
+      <input
+        v-model="form.name"
+        type="text"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
 
-    <form @submit.prevent="handleRegister">
-      <div>
-        <label>
-          Name
-          <input type="text" v-model="form.name" />
-        </label>
-      </div>
+    <div class="mb-6">
+      <label
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >
+        Email address
+      </label>
+      <input
+        v-model="form.email"
+        type="email"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
 
-      <div>
-        <label>
-          Email
-          <input type="text" v-model="form.email" />
-        </label>
-      </div>
+    <div class="mb-6">
+      <label
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Senha</label
+      >
+      <input
+        v-model="form.password"
+        type="password"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
 
-      <div>
-        <label>
-          Password
-          <input type="password" v-model="form.password" />
-        </label>
-      </div>
+    <div class="mb-6">
+      <label
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Confirme a senha</label
+      >
+      <input
+        v-model="form.password_confirmation"
+        type="password"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
 
-      <div>
-        <label>
-          Password Confirmation
-          <input type="password" v-model="form.password_confirmation" />
-        </label>
-      </div>
-
-      <button type="submit">Login</button>
-    </form>
-  </div>
+    <button
+      type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Salvar
+    </button>
+  </form>
 </template>
